@@ -1,0 +1,11 @@
+.bg-custom {
+    background-color: #1e4d6b;
+}
+
+.nav-link-animated {
+    transition: transform 0.3s;
+}
+
+.nav-link-animated:hover {
+    transform: scale(1.1);
+}

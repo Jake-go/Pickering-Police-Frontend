@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <h1>Phone Cases</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Police Officer's Name</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let phonecases of phonecasesList">
+                <td>{{ phonecases.id }}</td>
+                <td>{{ phonecases.name }}</td>
+                <td>{{ phonecases.price }}</td>
+                <td>{{ phonecases.quantity }}</td>
+                <td>{{ phonecases.employeeName }}</td>
+                <td>
+                    <button *ngIf="phonecases.id" (click)="deletePhonecase(phonecases.id)"
+                        class="btn btn-outline-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

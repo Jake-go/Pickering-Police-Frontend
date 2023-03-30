@@ -1,0 +1,11 @@
+<div class="container mt-5">
+    <h1>Add Police</h1>
+    <form (ngSubmit)="onSubmit()" [formGroup]="policeForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input formControlName="name" type="text" class="form-control" id="name" placeholder="Enter name...">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

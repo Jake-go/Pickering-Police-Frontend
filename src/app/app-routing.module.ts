@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'phonecases', component: PhonecasesComponent },
   { path: 'add-police', component: AddPoliceComponent },
   { path: 'add-phonecase', component: AddPhonecasesComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({

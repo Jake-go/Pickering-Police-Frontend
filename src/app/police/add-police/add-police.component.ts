@@ -1,7 +1,7 @@
 // add-police.component.ts
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PoliceService } from '../police.service';
 import { Police } from '../police.module';
 
@@ -16,7 +16,7 @@ export class AddPoliceComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private policeService: PoliceService) {
     this.policeForm = this.fb.group({
-      name: ''
+      name: ['', Validators.required]
     });
   }
 

@@ -1,7 +1,7 @@
 //add-phonecases.component.ts
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Phonecases } from '../phonecases.module';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PhonecasesService } from '../phonecases.service';
 import { PoliceService } from 'src/app/police/police.service';
 import { Police } from 'src/app/police/police.module';
@@ -21,10 +21,10 @@ export class AddPhonecasesComponent implements OnInit, OnDestroy {
 
   constructor(private fb: FormBuilder, private phonecasesService: PhonecasesService, private policeService: PoliceService) {
     this.phonecasesForm = this.fb.group({
-      name: '',
-      price: 0,
-      quantity: 0,
-      employeeName: ''
+      name: ['', Validators.required],
+      price: [0, Validators.required, Validators.min(0)],
+      quantity: [0, Validators.required, Validators.min(0)],
+      employeeName: ['', Validators.required]
     });
   }
 
